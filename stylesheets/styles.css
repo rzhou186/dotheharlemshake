@@ -1,0 +1,19 @@
+body {
+	padding-top: 40px;
+}
+
+.navbar .brand {
+	color: #ffffff;
+}
+
+.navbar .nav > li > a {
+	color: #ffffff;
+}
+
+.navbar-fixed-top .container {
+	width: 90%;
+}
+
+.navbar-fixed-bottom .container {
+	width: 40%;
+}
