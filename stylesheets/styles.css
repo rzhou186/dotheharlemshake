@@ -48,10 +48,10 @@ body {
 	width: 398px;
 	height: 298px;
 	border: solid 2px;
-	border-color: #ffffff;
+	border-color: red;
 	background-color: #000000;
-	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
 }

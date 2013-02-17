@@ -7,7 +7,9 @@
 
 $(document).ready(function() {
 
-  $("#recorder").scriptcam({
+  $("#webcam").scriptcam({
+    height: 298,
+    width: 398,
     path: 'javascripts/scriptcam/'
   });
 
