@@ -3,7 +3,7 @@
 
 	<head>
     
-		<title>Do the Harlem Shake</title>
+		<title>Do the Harlem Shake!</title>
     
 		<!-- CSS -->
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
@@ -17,9 +17,8 @@
 		<div class="navbar navbar-fixed-top navbar-inverse">
   		<div class="navbar-inner">
   			<div class="container">
-	    		<a class="brand" href="#">Do the Harlem Shake</a>
+	    		<a class="brand" href="#">Do the Harlem Shake!</a>
 	    		<ul class="nav pull-right">
-	      		<li><a href="#">How it Works</a></li>
 	    		</ul>
 	    	</div>
   		</div>
@@ -28,26 +27,40 @@
 		<!-- App Window -->
 		<div class="container">
 			<div class="app-window">
-  				<h1>Your Own Harlem Shake Video</h1>
-  				<h1>
-  					<small><div class="helper-text">Description of current step.</div></small>
-  				</h1>
+				
+				<h1>Your Own Harlem Shake Video</h1>
+				<h1><small>
+					<div class="helper-text">
+						<span style="color: #ffffff;">Step 1: </span> <span style="color: #ff0000;">Record</span> the first half of your Harlem Shake. Turn up the audio!
+					</div>
+				</small></h1>
 
-  				<!-- Video Recorder -->
-  				<div id="recorder">
-  					<div id="webcam">
-  					</div>
-  				</div>
+				<!-- Video Recorder -->
+				<div id="recorder">
+					<div id="webcam"></div>
+				</div>
 
-  				<button id="recorder-btn" class="btn btn-danger btn-large btn-record">
-  					<strong id="recorder-text">
-  						<i class="icon-eye-open icon-white"></i>&nbsp;Record
-  					</strong>
-  				</button>
-  			
-  				<div class="progress-tracker">
-  					<strong>Step 1 (Record)</strong> --> Step 2 (Record) --> Step 3 (Download)
-  				</div>
+				<button id="record-btn" class="btn btn-danger btn-large btn-record" disabled="true">
+					<strong id="record-btn-txt">
+						<i class="icon-eye-open icon-white"></i>&nbsp;Record
+					</strong>
+				</button>
+			
+				<!-- Downloader (kept hidden until step 3) -->
+				<div id="downloader">
+					<button id="download-btn" class="btn btn-primary btn-large btn-download">
+						<strong>
+							<i class="icon-hand-right icon-white"></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class="icon-hand-left icon-white"></i>
+						</strong>
+					</button>
+				</div>
+
+				<!-- Progress Tracker -->
+				<div class="progress-tracker">
+					<span class="progress-step left current" id="step1">Step 1</span>
+					<span class="progress-step center" id="step2">Step 2</span>
+					<span class="progress-step right" id="step3">Step 3</span>
+				</div>
   				
 			</div>
 		</div>
@@ -63,7 +76,6 @@
 	    		<ul class="nav pull-right">
 	    			<li><a href="#">Terms</a></li>
 	      		<li><a href="#">Help</a></li>
-	      		<li><a href="#">Press</a></li>
 	    		</ul>
 	    	</div>
   		</div>

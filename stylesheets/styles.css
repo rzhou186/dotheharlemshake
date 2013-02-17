@@ -45,8 +45,8 @@ body {
 }
 
 .app-window #recorder {
-	width: 398px;
-	height: 298px;
+	width: 396px;
+	height: 296px;
 	border: solid 2px;
 	border-color: red;
 	background-color: #000000;
@@ -58,17 +58,53 @@ body {
 
 .app-window .btn-record {
 	width: 400px;
-}
-
-.app-window .helper-text {
-
+	height: 45px;
 }
 
 .app-window .progress-tracker {
-	background-color: red;
-	height: 90px;
+	height: 80px;
 	width: 400px;
+	padding-top: 10px;
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.progress-tracker .progress-step {
+	font-weight: bold;
+	font-size: 20px;
+	color: #808080;
+}
+
+.progress-tracker .current {
+	color: #ff0000;
+}
+
+.progress-tracker .left {
+	float: left;
+}
+
+.progress-tracker .center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.progress-tracker .right {
+	float: right;
+}
+
+.app-window #downloader {
+	display: none;
+	height: 205px;
+	width: 400px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 160px;
+}
+
+.app-window #downloader .btn-download {
+	width: 400px;
+	height: 45px;
 }

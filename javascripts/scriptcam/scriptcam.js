@@ -66,7 +66,8 @@
 			for (var key in opts) {
 				opts[key] = encodeURIComponent(opts[key]);
 			};
-			swfobject.embedSWF(data.path+'scriptcam.swf', opts.id, newWidth, newHeight, '11.4', false, opts, params);
+			// data.path is empty here because ScriptCam encodes paths in app.js incorrectly.
+			swfobject.embedSWF(data.path+'javascripts/scriptcam/scriptcam.swf', opts.id, newWidth, newHeight, '11.4', false, opts, params);
 		});
 	};
 	
