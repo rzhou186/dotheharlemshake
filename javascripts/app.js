@@ -164,7 +164,7 @@ function updateStep(step){
 		if (step === 2){
 			$("#step1").attr("class", "progress-step left");
 			$("#step2").attr("class", "progress-step center current");
-			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep your audio turned on!");
+			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");
 		}
 
 		if (step === 3){
