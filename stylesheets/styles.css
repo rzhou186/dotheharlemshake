@@ -31,7 +31,7 @@ body {
 	border-color: #ffffff;
 	text-align: center;
 	color: #ffffff;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.7);
 	margin-top: 38px;
 	margin-bottom: 78px;
 	margin-left: auto;
@@ -44,19 +44,16 @@ body {
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.app-window .recorder {
+.app-window #recorder {
 	width: 398px;
-	height: 348px;
+	height: 298px;
 	border: solid 2px;
-	border-color: #cecece;
+	border-color: #ffffff;
 	background-color: #000000;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	-webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
 }
 
 .app-window .btn-record {
@@ -69,7 +66,7 @@ body {
 
 .app-window .progress-tracker {
 	background-color: red;
-	height: 40px;
+	height: 90px;
 	width: 400px;
 	margin-top: 20px;
 	margin-left: auto;
