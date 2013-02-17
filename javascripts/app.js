@@ -37,6 +37,9 @@ $(document).ready(function(){
  * 
  */
 function alertError(errorId, errorMsg) {
+	if (errorId === 4){
+		$("#webcam").remove();
+	}
 }
 
 /*
@@ -156,7 +159,7 @@ function completeCountdown(seconds){
  * 
  */
 function updateStep(step){
-	if (step === 1 || step === 2 || step === 3){
+	if (step === 2 || step === 3){
 
 		if (step === 2){
 			$("#step1").attr("class", "progress-step left");
