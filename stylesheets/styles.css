@@ -10,7 +10,7 @@ body {
 	color: #ffffff;
 }
 
-.navbar .nav > li > a {
+.navbar .container .nav > li > a {
 	color: #ffffff;
 }
 
@@ -18,8 +18,14 @@ body {
 	width: 90%;
 }
 
+.navbar-fixed-bottom .container > .nav {
+	float: none;
+	display: inline-block;
+}
+
 .navbar-fixed-bottom .container {
-	width: 40%;
+	text-align: center;
+	height: 40px;
 }
 
 .app-window {
