@@ -51,6 +51,7 @@ function alertError(errorId, errorMsg) {
 function enableRecord() {
 
 	$("#record-btn").attr("disabled", false);
+	$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
 
 	$("#record-btn").click(function(){
 		
