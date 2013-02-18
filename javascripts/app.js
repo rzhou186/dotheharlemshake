@@ -39,6 +39,7 @@ $(document).ready(function(){
 function alertError(errorId, errorMsg) {
 	if (errorId === 4){
 		$("#webcam").remove();
+		$("#record-btn-txt").html("Webcam access denied.");
 	}
 }
 
