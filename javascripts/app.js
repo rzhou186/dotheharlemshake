@@ -57,7 +57,7 @@ function enableRecord() {
 	$("#record-btn").click(function(){
 		
 		$("#record-btn").attr("disabled", true);
-		preCountdown(15);
+		startCountdown(15);
 
 	});
 
@@ -80,11 +80,11 @@ function playHarlemShake(part){
 }
 
 /*
- * Function: preCountdown()
+ * Function: startCountdown()
  * Gives the client 3 seconds to prepare for new video recording.
  * 
  */
-function preCountdown(seconds){
+function startCountdown(seconds){
 	
 	var counter = 3;
 	$("#record-btn-txt").html(counter);
