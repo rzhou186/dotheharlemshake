@@ -180,7 +180,7 @@ function completeCountdown(seconds){
 			// Stop recording
 			$.scriptcam.closeCamera();
 
-			if (currStep === 2){
+			if (currStep === 1){
 				$("#record-btn").attr("disabled", false);
 				$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
 			}
