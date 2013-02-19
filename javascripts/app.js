@@ -10,8 +10,8 @@ var currStep = 1;
 $(document).ready(function(){
 
 	// Load audio files
-	var harlemshake_part1 = new Audio('audio/harlemshake-part1.mp3');
-	var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
+	var harlemshake_part1 = new Audio('harlemshake-part1.mp3');
+	var harlemshake_part2 = new Audio('harlemshake-part2.mp3');
 
 	// Initiate ScriptCam application
   $("#webcam").scriptcam({
