@@ -13,8 +13,6 @@ var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
 
 $(document).ready(function(){
 
-	
-
 	// Initiate ScriptCam application
   $("#webcam").scriptcam({
     width: 396,
