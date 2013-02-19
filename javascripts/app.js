@@ -127,7 +127,7 @@ function completeCountdown(seconds){
 	playHarlemShake(currStep);
 
 	// Start recording
-	// $.scriptcam.startRecording();
+	$.scriptcam.startRecording();
 	
 	// Initiate countdown
 	$("#record-btn-txt").html("Recording... " + counter + " seconds left");
@@ -141,7 +141,7 @@ function completeCountdown(seconds){
 			$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
 
 			// Stop recording
-			// $.scriptcam.closeCamera();
+			 $.scriptcam.closeCamera();
 
 			// Update current step
 			currStep++;
