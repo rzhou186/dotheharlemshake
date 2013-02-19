@@ -38,6 +38,18 @@ $(document).ready(function(){
 
 function fileReady (fileName){
 	alert(fileName);
+	
+	// Reinitialize ScriptCam application (because ScriptCam is shitty and this is the only solution)
+	$("#webcam").scriptcam({
+    width: 396,
+    height: 296,
+    cornerRadius: 0,
+    useMicrophone: false,
+    onError: alertError,
+    fileName: 'uservideo',
+    connected: enableRecord,
+    fileReady: fileReady
+  });
 }
 
 /*
