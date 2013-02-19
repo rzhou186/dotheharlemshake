@@ -36,8 +36,18 @@ $(document).ready(function(){
 
 });
 
+/*
+ * Function: fileReady()
+ * Triggered when a video is successfully recorded.
+ * Has access to the file name of the video.
+ * 
+ */
 function fileReady (fileName){
 	if (currStep === 2){
+
+		// Disable record button until ScriptCam is reinitialized
+		$("#record-btn").attr("disabled", true);
+
 		// Reinitialize ScriptCam application (because ScriptCam is shitty and this is the only solution)
 		$("#webcam").scriptcam({
 	    width: 396,
@@ -189,7 +199,7 @@ function completeCountdown(seconds){
  * 
  */
 function updateStep(step){
-console.log(step);
+
 	if (step === 2 || step === 3){
 
 		if (step === 2){
@@ -206,4 +216,5 @@ console.log(step);
 
 	}
 	else alert("Error! Invalid step number.");
+	
 }
