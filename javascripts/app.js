@@ -215,6 +215,7 @@ function updateStep(step){
 		}
 
 	}
-	else alert("Error! Invalid step number.");
 	
+	else alert("Error! Invalid step number.");
+
 }
