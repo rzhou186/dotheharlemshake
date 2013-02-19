@@ -21,7 +21,8 @@ $(document).ready(function(){
     useMicrophone: false,
     onError: alertError,
     fileName: 'uservideo',
-    connected: enableRecord
+    connected: enableRecord,
+    fileReady: fileReady
 
 		/*
 		ScriptCam encodes the below path incorrectly, causing the web app to fail,
@@ -34,6 +35,10 @@ $(document).ready(function(){
   });
 
 });
+
+function fileReady (fileName){
+	alert(fileName);
+}
 
 /*
  * Function: alertError()
@@ -141,7 +146,7 @@ function completeCountdown(seconds){
 			$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
 
 			// Stop recording
-			$.scriptcam.stopRecording();
+			$.scriptcam.closeCamera();
 
 			// Update current step
 			currStep++;
