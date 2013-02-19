@@ -141,7 +141,7 @@ function completeCountdown(seconds){
 			$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
 
 			// Stop recording
-			$.scriptcam.closeCamera();
+			$.scriptcam.stopRecording();
 
 			// Update current step
 			currStep++;
