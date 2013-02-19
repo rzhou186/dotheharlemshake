@@ -177,14 +177,13 @@ function completeCountdown(seconds){
 		if (counter === 1) {
 			clearInterval(recordInterval);
 
-			$("#record-btn").attr("disabled", false);
-			$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
-
 			// Stop recording
 			$.scriptcam.closeCamera();
 
 			// Update current step
 			if(currStep < 3) {
+				$("#record-btn").attr("disabled", false);
+				$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
 				currStep++;
 				updateStep(currStep);
 			}	
