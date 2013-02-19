@@ -37,7 +37,6 @@ $(document).ready(function(){
 });
 
 function fileReady (fileName){
-	alert(fileName);
 	if (currStep === 2){
 		// Reinitialize ScriptCam application (because ScriptCam is shitty and this is the only solution)
 		$("#webcam").scriptcam({
@@ -50,13 +49,13 @@ function fileReady (fileName){
 	    connected: enableRecord,
 	    fileReady: fileReady
 	  });
-	 }
+	}
 
-	 if (currStep === 3){
-			$("#recorder").remove();
-			$("#record-btn").remove();
-			$("#downloader").css("display", "block");
-	 }
+	if (currStep === 3){
+		$("#recorder").remove();
+		$("#record-btn").remove();
+		$("#downloader").css("display", "block");
+	}
 
 }
 
@@ -190,6 +189,7 @@ function completeCountdown(seconds){
  * 
  */
 function updateStep(step){
+console.log(step);
 	if (step === 2 || step === 3){
 
 		if (step === 2){
