@@ -9,6 +9,10 @@ var currStep = 1;
 
 $(document).ready(function(){
 
+	// Load audio files
+	var harlemshake_part1 = new Audio('audio/harlemshake-part1.mp3');
+	var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
+
 	// Initiate ScriptCam application
   $("#webcam").scriptcam({
     width: 396,
@@ -71,8 +75,8 @@ function enableRecord() {
 function playHarlemShake(part){
 	if (part === 1 || part === 2){
 		if (window.HTMLAudioElement) {
-      var snd = new Audio('audio/harlemshake-part' + currStep + '.mp3');
-  	  snd.play();
+			if (part === 1) harlemshake_part1.play();
+  	  else if (part === 2) harlemshake_part2.play();
     }
     else alert("HTML5 Audio is not supported by your browser!");
   }
