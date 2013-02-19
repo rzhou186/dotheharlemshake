@@ -6,6 +6,8 @@
  */
 
 var currStep = 1;
+var filenameOne = "";
+var filenameTwo = "";
 
 // Load audio files
 var harlemshake_part1 = new Audio('audio/harlemshake-part1.mp3');
@@ -43,8 +45,10 @@ $(document).ready(function(){
  * 
  */
 function fileReady (fileName){
+	//console.log('Logging filename in general' + fileName);
 	if (currStep === 2){
-
+		//console.log('When step is 2' + fileName);
+		filenameOne = fileName;
 		// Disable record button until ScriptCam is reinitialized
 		$("#record-btn").attr("disabled", true);
 
@@ -62,6 +66,8 @@ function fileReady (fileName){
 	}
 
 	if (currStep === 3){
+		//console.log('When step is 3' + fileName);
+		filenameTwo = fileName;
 		$("#recorder").remove();
 		$("#record-btn").remove();
 		$("#downloader").css("display", "block");
@@ -178,9 +184,10 @@ function completeCountdown(seconds){
 			$.scriptcam.closeCamera();
 
 			// Update current step
-			currStep++;
-			updateStep(currStep);
-
+			if(currStep < 3) {
+				currStep++;
+				updateStep(currStep);
+			}	
 		}
 
 		// Else, decrease counter by 1 and continue countdown
@@ -199,7 +206,7 @@ function completeCountdown(seconds){
  * 
  */
 function updateStep(step){
-
+	console.log("" + step);
 	if (step === 2 || step === 3){
 
 		if (step === 2){
