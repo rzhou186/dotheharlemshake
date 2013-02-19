@@ -38,18 +38,26 @@ $(document).ready(function(){
 
 function fileReady (fileName){
 	alert(fileName);
-	
-	// Reinitialize ScriptCam application (because ScriptCam is shitty and this is the only solution)
-	$("#webcam").scriptcam({
-    width: 396,
-    height: 296,
-    cornerRadius: 0,
-    useMicrophone: false,
-    onError: alertError,
-    fileName: 'uservideo',
-    connected: enableRecord,
-    fileReady: fileReady
-  });
+	if (currStep === 2){
+		// Reinitialize ScriptCam application (because ScriptCam is shitty and this is the only solution)
+		$("#webcam").scriptcam({
+	    width: 396,
+	    height: 296,
+	    cornerRadius: 0,
+	    useMicrophone: false,
+	    onError: alertError,
+	    fileName: 'uservideo',
+	    connected: enableRecord,
+	    fileReady: fileReady
+	  });
+	 }
+
+	 if (currStep === 3){
+			$("#recorder").remove();
+			$("#record-btn").remove();
+			$("#downloader").css("display", "block");
+	 }
+
 }
 
 /*
@@ -194,10 +202,6 @@ function updateStep(step){
 			$("#step2").attr("class", "progress-step center");
 			$("#step3").attr("class", "progress-step right current");
 			$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
-
-			$("#recorder").remove();
-			$("#record-btn").remove();
-			$("#downloader").css("display", "block");
 		}
 
 	}
