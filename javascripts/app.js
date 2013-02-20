@@ -105,6 +105,9 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 
 	recordingOne = recordingOne.replace('.mp4','');
 	recordingTwo = recordingTwo.replace('.mp4','');
+	
+	alert(recordingOne);
+	alert(recordingTwo);
 
 	var form_data = {
 		recordingOne: recordingOne,
@@ -122,7 +125,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
     		document.location.href = data;
     	});
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
-			$("#download-btn").attr("disabled", true);
+			$("#download-btn").attr("disabled", false);
 		}
 	});
 
