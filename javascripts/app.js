@@ -103,11 +103,11 @@ function alertError(errorId, errorMsg) {
  */
 function deleteFromServer(filename){
 
-	$.ajax({
+	var request = $.ajax({
 		url: "deletevid.php",
 		type: "POST",
 		data: "/home/scriptcam/" + filename
-	});
+	}).done(function() { alert("success"); });
 
 }
 
