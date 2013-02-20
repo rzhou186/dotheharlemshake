@@ -11,8 +11,8 @@
   shell_exec('cat '.'/home/scriptcam/'.$file1.'.mpg '.'/home/scriptcam/'.$file2.'.mpg > '.'/home/scriptcam/'.$file1.$file2.'.mpg');
   unlink('/home/scriptcam/'.$file1.'.mpg');
   unlink('/home/scriptcam/'.$file2.'.mpg');
-  shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.$file2.'.mpg'.' -i '.$audio.' -ab 192k -vcodec copy -shortest '.'/var/videos/'.$file1.$file2.'1.mpg');
-  unlink('/var/videos/'.$file1.$file2.'.mpg');
-  echo '/var/videos/'.$file1.$file2.'1.mpg';
+  shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.$file2.'.mpg'.' -i '.$audio.' -ab 192k -vcodec copy -shortest '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg');
+  unlink('/home/scriptcam/'.$file1.$file2.'.mpg');
+  echo '/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg';
   
  ?>
