@@ -46,10 +46,11 @@ $(document).ready(function(){
  */
 function fileReady (fileName){
 
-	//console.log('Logging filename in general' + fileName);
+	
 	if (currStep === 2){
-		//console.log('When step is 2' + fileName);
+		
 		filenameOne = fileName;
+
 		// Disable record button until ScriptCam is reinitialized
 		$("#record-btn").attr("disabled", true);
 		$("#record-btn-txt").html("Reinitializing webcam...");
@@ -68,8 +69,9 @@ function fileReady (fileName){
 	}
 
 	if (currStep === 3){
-		//console.log('When step is 3' + fileName);
+		
 		filenameTwo = fileName;
+
 		$("#recorder").remove();
 		$("#record-btn").remove();
 		$("#downloader").css("display", "block");
@@ -78,7 +80,6 @@ function fileReady (fileName){
 		$("#step3").attr("class", "progress-step right current");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
-		deleteFromServer(filenameOne);
 	}
 
 }
@@ -104,7 +105,7 @@ function alertError(errorId, errorMsg) {
 function deleteFromServer(filename){
 
 	var form_data = {
-		name: "/home/scriptcam/" + filename,
+		filename: "/home/scriptcam/" + filename,
 		is_ajax: 1
 	};
 
@@ -236,25 +237,20 @@ function completeCountdown(seconds){
  */
 function updateStep(step){
 
-	if (step === 2 || step === 3){
-
-		if (step === 2){
-			$("#step1").attr("class", "progress-step left");
-			$("#step2").attr("class", "progress-step center current");
-			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");			
-		}
-
-		// I moved the below lines of code to the fileReady function.
-		// In fact, this whole function is probably unnecessary, and can be addressed in fileReady.
-		/*
-		if (step === 3){
-			$("#step2").attr("class", "progress-step center");
-			$("#step3").attr("class", "progress-step right current");
-			$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
-		}
-		*/
-
+	if (step === 2){
+		$("#step1").attr("class", "progress-step left");
+		$("#step2").attr("class", "progress-step center current");
+		$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");			
 	}
+
+	// I moved the following lines of code to the fileReady function, to preserve the original JS order
+	/*
+	else if (step === 3){
+		$("#step2").attr("class", "progress-step center");
+		$("#step3").attr("class", "progress-step right current");
+		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
+	}
+	*/
 	
 	else alert("Error! Invalid step number.");
 

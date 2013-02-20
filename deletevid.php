@@ -1,6 +1,7 @@
 <?php
 	$is_ajax = $_REQUEST['is_ajax'];
-   	$data = $_REQUEST['name'];
-   	if (unlink($data)) echo "WOO!!!";
-   	else echo $data;
+	if (isset($is_ajax) && $is_ajax){
+		$data = $_REQUEST['filename'];
+		unlink($data)
+	}
 ?>
