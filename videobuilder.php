@@ -1,8 +1,8 @@
 <?php
    	
    	$file1 = $_REQUEST['recordingOne'];
-   	$file2 = $REQUEST['recordingTwo'];
-   	$audio = $REQUEST['audioFile'];
+   	$file2 = $_REQUEST['recordingTwo'];
+   	$audio = $_REQUEST['audioFile'];
    	$ffmpeg = 'ffmpeg';
    	shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file1.'.mpg');
    	shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file2.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file2.'.mpg');
