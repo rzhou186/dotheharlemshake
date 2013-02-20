@@ -1,5 +1,5 @@
 <?php
-   	$data = $_POST['data'];
+   	$data = $_REQUEST['data'];
    	unlink($data);
    	echo $data;
 ?>
