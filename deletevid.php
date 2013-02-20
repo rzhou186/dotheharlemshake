@@ -1,4 +1,6 @@
 <?php
-   if(isset($_POST['data']) 
-   		unlink($_POST['data']);
-  ?>
+   	
+   	$data = $_POST['data'];
+   	unlink($data);
+   	echo "SUCCESSFUL";
+?>
