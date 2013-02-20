@@ -105,7 +105,7 @@ function deleteFromServer(filename){
 
 	$.ajax({
 		url: "/deletevid.php",
-		type: "post",
+		type: "POST",
 		data: "/home/scriptcam/" + filename
 	});
 
