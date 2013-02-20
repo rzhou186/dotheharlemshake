@@ -51,6 +51,7 @@ function fileReady (fileName){
 		filenameOne = fileName;
 		// Disable record button until ScriptCam is reinitialized
 		$("#record-btn").attr("disabled", true);
+		$("#record-btn-txt").html("Reinitializing webcam...");
 
 		// Reinitialize ScriptCam application (because ScriptCam is shitty and this is the only solution)
 		$("#webcam").scriptcam({
@@ -71,6 +72,10 @@ function fileReady (fileName){
 		$("#recorder").remove();
 		$("#record-btn").remove();
 		$("#downloader").css("display", "block");
+
+		$("#step2").attr("class", "progress-step center");
+		$("#step3").attr("class", "progress-step right current");
+		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 	}
 
 }
@@ -180,11 +185,6 @@ function completeCountdown(seconds){
 			// Stop recording
 			$.scriptcam.closeCamera();
 
-			if (currStep === 1){
-				$("#record-btn").attr("disabled", false);
-				$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
-			}
-
 			// Update current step
 			if (currStep < 3) {
 				currStep++;
@@ -217,11 +217,15 @@ function updateStep(step){
 			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");
 		}
 
+		// I moved the below lines of code to the fileReady function.
+		// In fact, this whole function is probably unnecessary, and can be addressed in fileReady.
+		/*
 		if (step === 3){
 			$("#step2").attr("class", "progress-step center");
 			$("#step3").attr("class", "progress-step right current");
 			$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 		}
+		*/
 
 	}
 	
