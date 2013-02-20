@@ -4,7 +4,7 @@
    	$file2 = $_REQUEST['recordingTwo'];
    	// echo $file2;
    	// $audio = $_REQUEST['audioFile'];
-   	// $ffmpeg = 'ffmpeg';
+   	$ffmpeg = 'ffmpeg';
    	shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file1.'.mpg');
    	shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file2.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file2.'.mpg');
    	/*unlink('home/scriptcam/'.$file1.'.mp4');
