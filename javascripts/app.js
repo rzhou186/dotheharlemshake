@@ -123,6 +123,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
+			alert(data);
 			$("#download-btn").click(function() {
     		document.location.href = data;
     	});
