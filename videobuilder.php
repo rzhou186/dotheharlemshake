@@ -4,6 +4,4 @@
    	$file2 = $REQUEST['recordingTwo'];
    	$ffmpeg = 'ffmpeg';
    	exec($ffmpeg.' -i '.$file1.' -i '.$file2.'output.mp4');
-   	//unlink($data);
-   	echo "SUCCESSFUL";
 ?>
