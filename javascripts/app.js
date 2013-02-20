@@ -127,10 +127,7 @@ function deleteFromServer(filename){
 	var request = $.ajax({
 		url: "deletevid.php",
 		type: "POST",
-		data: form_data,
-		success: function (data){
-			alert(data);
-		}
+		data: form_data
 	});
 
 }
