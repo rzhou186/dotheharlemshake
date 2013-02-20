@@ -80,7 +80,7 @@ function fileReady (fileName){
 
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
-		},5000);
+		},20000);
 
 	}
 
@@ -123,7 +123,6 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			alert(data);
 			$("#download-btn").click(function() {
     		document.location.href = data;
     	});
