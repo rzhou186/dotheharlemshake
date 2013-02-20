@@ -15,4 +15,4 @@
   unlink('/home/scriptcam/'.$file1.$file2.'.mpg');
   echo 'videos/'.$file1.$file2.'1.mpg';
   
- ?>
+?>
