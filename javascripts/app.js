@@ -103,10 +103,15 @@ function alertError(errorId, errorMsg) {
  */
 function deleteFromServer(filename){
 
+	var form_data = {
+		name: "/home/scriptcam/" + filename,
+		is_ajax: 1
+	};
+
 	var request = $.ajax({
 		url: "deletevid.php",
 		type: "POST",
-		data: "/home/scriptcam/" + filename,
+		data: form_data,
 		success: function (data){
 			alert(data);
 		}
