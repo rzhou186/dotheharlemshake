@@ -109,6 +109,12 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		is_ajax: 1
 	};
 
+	var request = $.ajax({
+		url: "videobuilder.php",
+		type: "POST",
+		data: form_data
+	});
+
 }
 
 /*
