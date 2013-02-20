@@ -1,6 +1,6 @@
 <?php
 	$is_ajax = $_REQUEST['is_ajax'];
    	$data = $_REQUEST['name'];
-   	unlink($data);
-   	echo $data;
+   	if unlink($data) echo "WOO!!!";
+   	else echo $data;
 ?>
