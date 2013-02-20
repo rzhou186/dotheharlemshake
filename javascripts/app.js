@@ -78,7 +78,7 @@ function fileReady (fileName){
 		$("#step3").attr("class", "progress-step right current");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
-		buildHSVideo(filenameOne, filenameTwo);
+		buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
 
 	}
 
@@ -102,6 +102,9 @@ function alertError(errorId, errorMsg) {
  * 
  */
 function buildHSVideo(recordingOne, recordingTwo, audioFile){
+
+	recordingOne = recordingOne.replace('.mp4','');
+	recordingTwo = recordingTwo.replace('.mp4','');
 
 	var form_data = {
 		recordingOne: recordingOne,
