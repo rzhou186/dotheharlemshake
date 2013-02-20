@@ -45,6 +45,7 @@ $(document).ready(function(){
  * 
  */
 function fileReady (fileName){
+
 	//console.log('Logging filename in general' + fileName);
 	if (currStep === 2){
 		//console.log('When step is 2' + fileName);
@@ -76,6 +77,8 @@ function fileReady (fileName){
 		$("#step2").attr("class", "progress-step center");
 		$("#step3").attr("class", "progress-step right current");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
+
+		deleteFromServer(filenameOne);
 	}
 
 }
@@ -90,6 +93,22 @@ function alertError(errorId, errorMsg) {
 		$("#webcam").remove();
 		$("#record-btn-txt").html("Webcam access denied.");
 	}
+}
+
+/*
+ * Function: deleteFromServer()
+ * Sends a JQuery AJAX request to the server, 
+ * where deletevid.php deletes the appropriate MP4 file.
+ * 
+ */
+function deleteFromServer(filename){
+
+	$.ajax({
+		url: "/deletevid.php",
+		type: "post",
+		data: "/home/scriptcam/" + filename
+	});
+
 }
 
 /*
@@ -208,13 +227,13 @@ function completeCountdown(seconds){
  * 
  */
 function updateStep(step){
-	console.log("" + step);
+
 	if (step === 2 || step === 3){
 
 		if (step === 2){
 			$("#step1").attr("class", "progress-step left");
 			$("#step2").attr("class", "progress-step center current");
-			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");
+			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");			
 		}
 
 		// I moved the below lines of code to the fileReady function.
