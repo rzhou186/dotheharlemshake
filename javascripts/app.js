@@ -104,7 +104,7 @@ function alertError(errorId, errorMsg) {
 function deleteFromServer(filename){
 
 	$.ajax({
-		url: "/deletevid.php",
+		url: "deletevid.php",
 		type: "POST",
 		data: "/home/scriptcam/" + filename
 	});
