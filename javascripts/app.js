@@ -80,6 +80,8 @@ function fileReady (fileName){
 		$("#step3").attr("class", "progress-step right current");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
+		deleteFromServer(filenameOne);
+
 	}
 
 }
@@ -94,6 +96,22 @@ function alertError(errorId, errorMsg) {
 		$("#webcam").remove();
 		$("#record-btn-txt").html("Webcam access denied.");
 	}
+}
+
+/*
+ * Function: buildHSVideo()
+ * Builds the finished Harlem Shake video from the 2 recordings and the audio file.
+ * 
+ */
+function buildHSVideo(recordingOne, recordingTwo, audioFile){
+
+	var form_data = {
+		recordingOne: recordingOne,
+		recordingTwo: recordingTwo,
+		audioFile: audioFile,
+		is_ajax: 1
+	};
+
 }
 
 /*
@@ -112,10 +130,7 @@ function deleteFromServer(filename){
 	var request = $.ajax({
 		url: "deletevid.php",
 		type: "POST",
-		data: form_data,
-		success: function (data){
-			alert(data);
-		}
+		data: form_data
 	});
 
 }
