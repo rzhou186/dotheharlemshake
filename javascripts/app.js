@@ -162,6 +162,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
+			history.pushState(null, null, "/v/" + data.replace('.mpg', ''));
 			$("#download-btn").click(function() {
     		document.location.href = 'download.php?f=' + data;
     	});
