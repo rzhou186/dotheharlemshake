@@ -37,7 +37,10 @@ $(document).ready(function(){
 
   });
 
-  // Listen for client errors
+  // Delete all associated files when client navigates away from webpage
+  $(window).unload(function() {
+  	deleteAllRecordings();
+	});
 
 });
 
@@ -52,6 +55,7 @@ function alertError(errorId, errorMsg) {
 	if (errorId === 4){
 		$("#webcam").remove();
 		$("#record-btn-txt").html("Webcam access denied.");
+		deleteAllRecordings();
 	}
 	else if (errorId !== 7){
 		alert(errorMsg);
@@ -167,10 +171,10 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
  * where deletevid.php deletes the appropriate MP4 file.
  * 
  */
-function deleteFromServer(filename){
+function deleteFromServer(filename, path){
 
 	var form_data = {
-		filename: "/home/scriptcam/" + filename,
+		filename: path + filename,
 		is_ajax: 1
 	};
 
@@ -283,7 +287,16 @@ function playHarlemShake(part){
  * 
  */
 function deleteAllRecordings(){
+	if (filenameOne !== "" && filenameTwo === ""){
+		deleteFromServer(filenameOne, "/home/scriptcam/");
+	}
+	else if (filenameOne !== "" && filenameTwo !== ""){
+		deleteFromServer(filenameOne, "/home/scriptcam/");
+		deleteFromServer(filenameTwo, "/home/scriptcam/");
 
+		var vidName = filenameOne.replace('.mp4','') + filenameTwo.replace('.mp4','') + "1.mpg";
+		deleteFromServer(filenameTwo, "/var/www/dotheharlemshake/videos/");
+	}
 }
 
 /*
@@ -310,6 +323,7 @@ function updateStep(step){
 		}
 		*/
 	}
+	
 	else alert("Error! Invalid step number.");
 
 }
