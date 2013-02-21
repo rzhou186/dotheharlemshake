@@ -120,7 +120,7 @@ function fileReady (fileName){
 
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
-		},20000);
+		},5000);
 
 	}
 
@@ -276,7 +276,15 @@ function playHarlemShake(part){
   else alert("Error! Invalid audio filename.");
 }
 
+/*
+ * Function: deleteAllRecordings()
+ * Checks filenameOne and filenameTwo, then proceeds to delete all
+ * generated videos on the server with deleteFromServer().
+ * 
+ */
+function deleteAllRecordings(){
 
+}
 
 /*
  * Function: updateStep()
