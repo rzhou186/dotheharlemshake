@@ -18,6 +18,7 @@ $(document).ready(function(){
 	
 	if (window.location.hash !== ""){
 		displayDownloader();
+		$(".progress-tracker").css("visibility", "hidden");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
 		// Rebuild the original filename
