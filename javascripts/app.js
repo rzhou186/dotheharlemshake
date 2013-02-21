@@ -20,6 +20,16 @@ $(document).ready(function(){
 	$("#record-btn").remove();
 	$("#downloader").css("display", "block");
 */
+	
+	if (window.location.hash !== ""){
+		$("#download-btn").click(function() {
+  		document.location.href = '/download.php?f=' + window.location.hash.replace('#',''); + ".mpg";
+  	});
+		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
+		$("#download-btn").attr("disabled", false);
+		return;
+	}
+
 	// Initiate ScriptCam application
   $("#webcam").scriptcam({
     width: 396,
@@ -162,7 +172,8 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			history.pushState(null, null, "/v/" + data.replace('.mpg', ''));
+			history.pushState(null, null, "/#" + data.replace('.mpg', ''));
+			// add jwplayer
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
