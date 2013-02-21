@@ -17,7 +17,7 @@ var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
 $(document).ready(function(){
 	
 	// Load specific video if specified in URL
-	if (window.location.hash !== ""){
+	//if (window.location.hash !== ""){
 
 		// Rebuild the original filename
 		var originalName = window.location.hash.replace('#','');
@@ -33,10 +33,10 @@ $(document).ready(function(){
 		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 		$("#download-btn").attr("disabled", false);
 
-		initiateJWPlayer(originalName);
+	//	initiateJWPlayer(originalName);
 
 		return;
-	}
+	//}
 
 	// Display initial DOM elements
 	$("#recorder").css("visibility", "visible");
