@@ -287,6 +287,7 @@ function playHarlemShake(part){
  * 
  */
 function deleteAllRecordings(){
+	alert("Deleting all recordings!");
 	if (filenameOne !== "" && filenameTwo === ""){
 		deleteFromServer(filenameOne, "/home/scriptcam/");
 	}
