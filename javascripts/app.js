@@ -125,7 +125,8 @@ function fileReady (fileName){
 
 /*
  * Function: buildHSVideo()
- * Builds the finished Harlem Shake video from the 2 recordings and the audio file.
+ * Builds the final video, sending a JQuery AJAX request to videobuilder.php
+ * Requires 2 recordings and 1 audio file.
  * 
  */
 function buildHSVideo(recordingOne, recordingTwo, audioFile){
