@@ -133,9 +133,6 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 	recordingOne = recordingOne.replace('.mp4','');
 	recordingTwo = recordingTwo.replace('.mp4','');
 
-	alert(recordingOne);
-	alert(recordingTwo);
-
 	var form_data = {
 		recordingOne: recordingOne,
 		recordingTwo: recordingTwo,
