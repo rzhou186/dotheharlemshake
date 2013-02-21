@@ -119,7 +119,6 @@ body {
 }
 
 .app-window .media-sharer {
-	visibility: hidden;
 	height: 30px;
 	width: 400px;
 	padding-top: 5px;

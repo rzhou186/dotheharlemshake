@@ -37,9 +37,6 @@ $(document).ready(function(){
 
   });
 
-  // Render social media sharing buttons visible
-  $(".media-sharer").css('visibility', 'visible');
-
   // Delete all associated files when client navigates away from webpage
   /*
   window.onbeforeunload = function() {
