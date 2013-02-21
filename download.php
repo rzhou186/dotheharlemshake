@@ -33,7 +33,7 @@ define('LOG_FILE','downloads.log');
 // installed on server.
 $allowed_ext = array (
   // video
-  'mpg' => 'video/mpeg'
+  'mp4' => 'video/mpeg'
 );
 
 
