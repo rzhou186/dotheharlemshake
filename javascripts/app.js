@@ -97,10 +97,9 @@ function enableRecord() {
  */
 function fileReady (fileName){
 
-	//console.log('Logging filename in general' + fileName);
 	if (currStep === 2){
-		//console.log('When step is 2' + fileName);
 		filenameOne = fileName;
+
 		// Disable record button until ScriptCam is reinitialized
 		$("#record-btn").attr("disabled", true);
 		$("#record-btn-txt").html("Reinitializing webcam...");
@@ -119,7 +118,7 @@ function fileReady (fileName){
 	}
 
 	if (currStep === 3){
-		//console.log('When step is 3' + fileName);
+		
 		filenameTwo = fileName;
 		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
@@ -230,8 +229,8 @@ function completeCountdown(seconds){
 			$.scriptcam.closeCamera();
 
 			// Update current step
-			if (currStep < 3) {
-				currStep++;
+			currStep++;
+			if (currStep === 2) {
 				updateStep(currStep);
 			}	
 		}
