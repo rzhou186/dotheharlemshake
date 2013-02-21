@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
-
+		$("#vidplayer").css("display", "block");
 		$("#download-btn").click(function() {
   		document.location.href = '/download.php?f=' + originalName;
   	});
