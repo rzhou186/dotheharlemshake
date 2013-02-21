@@ -23,7 +23,7 @@ $(document).ready(function(){
 		// Rebuild the original filename
 		var originalName = window.location.hash.replace('#','') + ".mpg";
 		originalName = [originalName.slice(0, 7), "_uservideo", originalName.slice(7)].join('');
-		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(7)].join('');
+		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 		alert(originalName);
 
 		$("#download-btn").click(function() {
