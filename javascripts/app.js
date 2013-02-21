@@ -15,27 +15,20 @@ var harlemshake_part1 = new Audio('audio/harlemshake-part1.mp3');
 var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
 
 $(document).ready(function(){
-/*
-	$("#recorder").remove();
-	$("#record-btn").remove();
-	$("#downloader").css("display", "block");
-*/
 	
 	if (window.location.hash !== ""){
-		$("#recorder").remove();
-		$("#record-btn").remove();
-		$("#downloader").css("display", "block");
 
-		$("#step2").attr("class", "progress-step center");
-		$("#step3").attr("class", "progress-step right current");
-
+		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
+
 		$("#download-btn").click(function() {
   		document.location.href = '/download.php?f=' + window.location.hash.replace('#','') + ".mpg";
   	});
 		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 		$("#download-btn").attr("disabled", false);
+
 		return;
+
 	}
 
 	// Initiate ScriptCam application
@@ -45,7 +38,7 @@ $(document).ready(function(){
     cornerRadius: 0,
     useMicrophone: false,
     onError: alertError,
-    fileName: 'uservideo',
+    fileName: '',
     connected: enableRecord,
     fileReady: fileReady
 
@@ -58,14 +51,6 @@ $(document).ready(function(){
 	  */
 
   });
-
-  // Delete all associated files when client navigates away from webpage
-  /*
-  window.onbeforeunload = function() {
-  	return "Client is navigating away!";
-  	// deleteAllRecordings();
-	};
-	*/
 
 });
 
@@ -80,7 +65,6 @@ function alertError(errorId, errorMsg) {
 	if (errorId === 4){
 		$("#webcam").remove();
 		$("#record-btn-txt").html("Webcam access denied.");
-		deleteAllRecordings();
 	}
 	else if (errorId !== 7){
 		alert(errorMsg);
@@ -139,14 +123,10 @@ function fileReady (fileName){
 	if (currStep === 3){
 		//console.log('When step is 3' + fileName);
 		filenameTwo = fileName;
-		$("#recorder").remove();
-		$("#record-btn").remove();
-		$("#downloader").css("display", "block");
-
-		$("#step2").attr("class", "progress-step center");
-		$("#step3").attr("class", "progress-step right current");
+		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
+		// Give ScriptCam time to upload the final recording to the FTP server
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
 		},15000);
@@ -188,27 +168,6 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 			$("#download-btn").attr("disabled", false);
 		}
-	});
-
-}
-
-/*
- * Function: deleteFromServer()
- * Sends a JQuery AJAX request to the server, 
- * where deletevid.php deletes the appropriate MP4 file.
- * 
- */
-function deleteFromServer(filename, path){
-
-	var form_data = {
-		filename: path + filename,
-		is_ajax: 1
-	};
-
-	var request = $.ajax({
-		url: "deletevid.php",
-		type: "POST",
-		data: form_data
 	});
 
 }
@@ -289,6 +248,20 @@ function completeCountdown(seconds){
 
 }
 
+/*
+ * Function: displayDownloader()
+ * Replaces the app window's recorder element with the downloader
+ * 
+ */
+function displayDownloader(){
+	$("#recorder").remove();
+	$("#record-btn").remove();
+	$("#downloader").css("display", "block");
+
+	$("#step2").attr("class", "progress-step center");
+	$("#step3").attr("class", "progress-step right current");
+}
+
 /* -------------------- Miscellaneous Functions  -------------------- */
 
 /*
@@ -308,50 +281,17 @@ function playHarlemShake(part){
 }
 
 /*
- * Function: deleteAllRecordings()
- * Checks filenameOne and filenameTwo, then proceeds to delete all
- * generated videos on the server with deleteFromServer().
- * 
- */
-function deleteAllRecordings(){
-	alert("Deleting all recordings!");
-	if (filenameOne !== "" && filenameTwo === ""){
-		deleteFromServer(filenameOne, "/home/scriptcam/");
-	}
-	else if (filenameOne !== "" && filenameTwo !== ""){
-		deleteFromServer(filenameOne, "/home/scriptcam/");
-		deleteFromServer(filenameTwo, "/home/scriptcam/");
-
-		var vidName = filenameOne.replace('.mp4','') + filenameTwo.replace('.mp4','') + "1.mpg";
-		deleteFromServer(filenameTwo, "/var/www/dotheharlemshake/videos/");
-	}
-}
-
-/*
  * Function: updateStep()
  * Updates app-window elements and properties to match current step
  * 
  */
 function updateStep(step){
 
-	if (step === 2 || step === 3){
-		if (step === 2){
-			$("#step1").attr("class", "progress-step left");
-			$("#step2").attr("class", "progress-step center current");
-			$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");			
-		}
-
-		// I moved the below lines of code to the fileReady function.
-		// In fact, this whole function is probably unnecessary, and can be addressed in fileReady.
-		/*
-		if (step === 3){
-			$("#step2").attr("class", "progress-step center");
-			$("#step3").attr("class", "progress-step right current");
-			$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
-		}
-		*/
+	if (step === 2){
+		$("#step1").attr("class", "progress-step left");
+		$("#step2").attr("class", "progress-step center current");
+		$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");			
 	}
-
 	else alert("Error! Invalid step number.");
 
 }
