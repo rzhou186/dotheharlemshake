@@ -20,8 +20,11 @@ $(document).ready(function(){
 		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
+		// Rebuild the original filename
+		var originalName = window.location.hash.replace('#','') + ".mpg"
+
 		$("#download-btn").click(function() {
-  		document.location.href = '/download.php?f=' + window.location.hash.replace('#','') + ".mpg";
+  		document.location.href = '/download.php?f=' + originalName;
   	});
 		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 		$("#download-btn").attr("disabled", false);
@@ -157,7 +160,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,'red'));
+			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,''));
 			// add jwplayer
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
