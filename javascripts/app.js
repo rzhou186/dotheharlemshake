@@ -127,7 +127,7 @@ function fileReady (fileName){
 
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
-		},20000);
+		},15000);
 
 	}
 
