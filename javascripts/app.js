@@ -163,7 +163,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		data: form_data,
 		success: function(data){
 			$("#download-btn").click(function() {
-    		document.location.href = data;
+    		document.location.href = 'download.php?f=' + data;
     	});
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 			$("#download-btn").attr("disabled", false);
