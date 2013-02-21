@@ -17,7 +17,6 @@ var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
 $(document).ready(function(){
 	
 	if (window.location.hash !== ""){
-
 		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
@@ -28,7 +27,6 @@ $(document).ready(function(){
 		$("#download-btn").attr("disabled", false);
 
 		return;
-
 	}
 
 	// Initiate ScriptCam application
@@ -126,7 +124,7 @@ function fileReady (fileName){
 		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
-		// Give ScriptCam time to upload the final recording to the FTP server
+		// Give ScriptCam time to load final recording to FTP server
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
 		},15000);
@@ -161,7 +159,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		data: form_data,
 		success: function(data){
 			history.pushState(null, null, "/#" + data.replace('.mpg', ''));
-			// Add JWPlayer
+			// add jwplayer
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
@@ -232,8 +230,8 @@ function completeCountdown(seconds){
 			$.scriptcam.closeCamera();
 
 			// Update current step
-			currStep++;
-			if (currStep === 1) {
+			if (currStep < 3) {
+				currStep++;
 				updateStep(currStep);
 			}	
 		}
