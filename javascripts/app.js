@@ -289,6 +289,8 @@ function updateStep(step){
 		$("#step2").attr("class", "progress-step center current");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 2: </span>Good work! Now <span style='color: #ff0000;'>record</span> the second half. Keep the sound turned on!");			
 	}
-	else alert("Error! Invalid step number.");
+	else if (step !== 3){
+		alert("Error! Invalid step number.");
+	}
 
 }
