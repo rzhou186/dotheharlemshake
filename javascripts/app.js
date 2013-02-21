@@ -25,7 +25,6 @@ $(document).ready(function(){
 		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 
 		displayDownloader();
-		$(".progress-tracker").css("visibility", "hidden");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
 		$("#download-btn").click(function() {
@@ -38,6 +37,10 @@ $(document).ready(function(){
 
 		return;
 	}
+
+	// Display initial DOM elements
+	$("#recorder").css("visibility", "visible");
+	$("#record-btn").css("visibility", "visible");
 
 	// Initiate ScriptCam application
   $("#webcam").scriptcam({
@@ -263,8 +266,16 @@ function completeCountdown(seconds){
 function displayDownloader(){
 	$("#recorder").remove();
 	$("#record-btn").remove();
+	$(".progress-tracker").remove();
 	$("#vidplayer").css("display", "block");
 	$("#downloader").css("display", "block");
+	$("#linkretriever input").val(window.location);
+	
+	var clip = new ZeroClipboard( document.getElementById("copy-button"), {
+  	moviePath: "javascripts/ZeroClipboard-master/ZeroClipboard.swf"
+	});
+	$("#copy-button").attr('data-clipboard-text', $("#linkretriever input").val());
+	$("#linkretriever").css("display", "block");
 
 	$("#step2").attr("class", "progress-step center");
 	$("#step3").attr("class", "progress-step right current");
@@ -273,7 +284,6 @@ function displayDownloader(){
 /* -------------------- JW Player Functions  -------------------- */
 
 function initiateJWPlayer(vidname){
-	alert("Initiating JW Player... name of video is " + vidname);
   jwplayer('#vidplayer').setup({
 		file: 'http://www.maketheharlemshake.com/videos/' + vidname,
 		width: '396',

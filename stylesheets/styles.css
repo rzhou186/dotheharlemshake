@@ -54,6 +54,7 @@ body {
 }
 
 .app-window #recorder {
+	visibility: hidden;
 	width: 396px;
 	height: 296px;
 	border: solid 2px;
@@ -66,6 +67,7 @@ body {
 }
 
 .app-window .btn-record {
+	visibility: hidden;
 	width: 400px;
 	height: 45px;
 }
@@ -122,6 +124,36 @@ body {
 .app-window #downloader .btn-download {
 	width: 400px;
 	height: 45px;
+}
+
+.app-window #linkretriever {
+	display: none;	
+	height: 35px;
+	width: 400px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.app-window #linkretriever input {
+	width: 285px;
+	height: 25px;
+	padding-left: 10px;
+	-webkit-border-radius: 0px;
+	   -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+
+.app-window #linkretriever .btn {
+	height: 35px;
+	width: 90px;
+	padding-top: 2px;
+	padding-left: 10px;
+	margin-left: 3px;
+	margin-top: -10px;
+	-webkit-border-radius: 0px;
+	   -moz-border-radius: 0px;
+          border-radius: 0px;
 }
 
 .app-window .media-sharer {
