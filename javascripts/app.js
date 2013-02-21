@@ -118,7 +118,7 @@ function fileReady (fileName){
 	}
 
 	if (currStep === 3){
-		
+
 		filenameTwo = fileName;
 		displayDownloader();
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
@@ -229,8 +229,8 @@ function completeCountdown(seconds){
 			$.scriptcam.closeCamera();
 
 			// Update current step
-			currStep++;
-			if (currStep === 2) {
+			if (currStep < 3) {
+				currStep++;
 				updateStep(currStep);
 			}	
 		}
