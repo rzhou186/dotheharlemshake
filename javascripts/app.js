@@ -157,7 +157,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			history.pushState(null, null, "/#" + data.replace('.mpg', ''));
+			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,'red'));
 			// add jwplayer
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
@@ -283,7 +283,7 @@ function playHarlemShake(part){
  * 
  */
 function updateStep(step){
-	
+
 	if (step === 2){
 		$("#step1").attr("class", "progress-step left");
 		$("#step2").attr("class", "progress-step center current");
