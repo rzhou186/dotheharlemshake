@@ -5,6 +5,7 @@
  * 
  */
 
+// Initialize global variables
 var currStep = 1;
 var filenameOne = "";
 var filenameTwo = "";
@@ -37,6 +38,40 @@ $(document).ready(function(){
   });
 
 });
+
+/* -------------------- ScriptCam Functions -------------------- */
+
+/*
+ * Function: alertError()
+ * Called whenever ScriptCam runs into an error.
+ * 
+ */
+function alertError(errorId, errorMsg) {
+	if (errorId === 4){
+		$("#webcam").remove();
+		$("#record-btn-txt").html("Webcam access denied.");
+	}
+}
+
+/*
+ * Function: enableRecord()
+ * Triggered when ScriptCam successfully establishes a connection.
+ * Activates record button.
+ * 
+ */
+function enableRecord() {
+
+	$("#record-btn").attr("disabled", false);
+	$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
+
+	$("#record-btn").click(function(){
+		
+		$("#record-btn").attr("disabled", true);
+		startCountdown(15);
+
+	});
+
+}
 
 /*
  * Function: fileReady()
@@ -86,17 +121,7 @@ function fileReady (fileName){
 
 }
 
-/*
- * Function: alertError()
- * Called whenever ScriptCam runs into an error.
- * 
- */
-function alertError(errorId, errorMsg) {
-	if (errorId === 4){
-		$("#webcam").remove();
-		$("#record-btn-txt").html("Webcam access denied.");
-	}
-}
+/* -------------------- Server-Side Video Functions -------------------- */
 
 /*
  * Function: buildHSVideo()
@@ -154,41 +179,7 @@ function deleteFromServer(filename){
 
 }
 
-/*
- * Function: enableRecord()
- * Triggered when ScriptCam successfully establishes a connection.
- * Activates record button.
- * 
- */
-function enableRecord() {
-
-	$("#record-btn").attr("disabled", false);
-	$("#record-btn-txt").html("<i class='icon-eye-open icon-white'></i>&nbsp;Record");
-
-	$("#record-btn").click(function(){
-		
-		$("#record-btn").attr("disabled", true);
-		startCountdown(15);
-
-	});
-
-}
-
-/*
- * Function: playHarlemShake()
- * Plays part 1 or part 2 of Harlem Shake audio, depending on argument.
- * 
- */
-function playHarlemShake(part){
-	if (part === 1 || part === 2){
-		if (window.HTMLAudioElement) {
-			if (part === 1) harlemshake_part1.play();
-  	  else if (part === 2) harlemshake_part2.play();
-    }
-    else alert("HTML5 Audio is not supported by your browser!");
-  }
-  else alert("Error! Invalid audio filename.");
-}
+/* -------------------- DOM Manipulation & Countdowns  -------------------- */
 
 /*
  * Function: startCountdown()
@@ -262,6 +253,24 @@ function completeCountdown(seconds){
 
 	}, 1000);
 
+}
+
+/* -------------------- Miscellaneous Functions  -------------------- */
+
+/*
+ * Function: playHarlemShake()
+ * Plays part 1 or part 2 of Harlem Shake audio, depending on argument.
+ * 
+ */
+function playHarlemShake(part){
+	if (part === 1 || part === 2){
+		if (window.HTMLAudioElement) {
+			if (part === 1) harlemshake_part1.play();
+  	  else if (part === 2) harlemshake_part2.play();
+    }
+    else alert("HTML5 Audio is not supported by your browser!");
+  }
+  else alert("Error! Invalid audio filename.");
 }
 
 /*

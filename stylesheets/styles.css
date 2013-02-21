@@ -2,12 +2,12 @@ body {
 	padding-top: 40px;
 	background-image: url('../images/background.jpg');
   background-repeat: no-repeat;
-  background-position: center;
   background-color: #000000;
   background-size: cover;
   -webkit-background-size: cover;
      -moz-background-size: cover;
 			 -o-background-size: cover;
+	
 }
 
 .navbar .brand {
