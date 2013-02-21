@@ -39,6 +39,7 @@ $(document).ready(function(){
 
   // Delete all associated files when client navigates away from webpage
   $(window).unload(function() {
+  	alert("Client is navigating away!");
   	deleteAllRecordings();
 	});
 
