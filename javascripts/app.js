@@ -253,12 +253,13 @@ function completeCountdown(seconds){
 
 /*
  * Function: displayDownloader()
- * Replaces the app window's recorder element with the downloader
+ * Replaces the app window's recorder element with the downloader and video player
  * 
  */
 function displayDownloader(){
 	$("#recorder").remove();
 	$("#record-btn").remove();
+	$("#vidplayer").css("display", "block");
 	$("#downloader").css("display", "block");
 
 	$("#step2").attr("class", "progress-step center");

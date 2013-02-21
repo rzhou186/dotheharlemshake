@@ -102,15 +102,21 @@ body {
 	float: right;
 }
 
-.app-window #downloader {
+.app-window #vidplayer {
 	display: none;
-	height: 205px;
-	width: 400px;
+	width: 396px;
+	height: 296px;
+	border: solid 2px;
+	border-color: #c0c0c0;
+	background-color: #000000;
 	margin-top: 20px;
-	margin-bottom: 0px;
+	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 160px;
+}
+
+.app-window #downloader {
+	display: none;
 }
 
 .app-window #downloader .btn-download {
