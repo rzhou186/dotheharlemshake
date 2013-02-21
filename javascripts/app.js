@@ -283,7 +283,7 @@ function playHarlemShake(part){
  * 
  */
 function updateStep(step){
-
+	alert("The step is now " + step);
 	if (step === 2){
 		$("#step1").attr("class", "progress-step left");
 		$("#step2").attr("class", "progress-step center current");
