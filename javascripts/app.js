@@ -28,7 +28,7 @@ $(document).ready(function(){
 		$("#download-btn").attr("disabled", false);
 
 		return;
-
+		
 	}
 
 	// Initiate ScriptCam application
@@ -160,8 +160,8 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace('_uservideo', ''));
-			// Add JWPlayer here!
+			history.pushState(null, null, "/#" + data.replace('.mpg', ''));
+			// add jwplayer
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
