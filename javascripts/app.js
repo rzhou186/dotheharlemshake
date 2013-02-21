@@ -37,6 +37,8 @@ $(document).ready(function(){
 
   });
 
+  // Listen for client errors
+
 });
 
 /* -------------------- ScriptCam Functions -------------------- */
@@ -50,6 +52,9 @@ function alertError(errorId, errorMsg) {
 	if (errorId === 4){
 		$("#webcam").remove();
 		$("#record-btn-txt").html("Webcam access denied.");
+	}
+	else{
+		alert(errorMsg);
 	}
 }
 
@@ -146,8 +151,9 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			$("#download-btn").click(function() {
-    		document.location.href = data;
+			$("#download-btn").click(function(e) {
+				e.preventDefault();
+    		window.location.href = data;
     	});
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 			$("#download-btn").attr("disabled", false);
@@ -271,6 +277,8 @@ function playHarlemShake(part){
   else alert("Error! Invalid audio filename.");
 }
 
+
+
 /*
  * Function: updateStep()
  * Updates app-window elements and properties to match current step
@@ -279,7 +287,6 @@ function playHarlemShake(part){
 function updateStep(step){
 
 	if (step === 2 || step === 3){
-
 		if (step === 2){
 			$("#step1").attr("class", "progress-step left");
 			$("#step2").attr("class", "progress-step center current");
@@ -295,9 +302,7 @@ function updateStep(step){
 			$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 		}
 		*/
-
 	}
-	
 	else alert("Error! Invalid step number.");
 
 }
