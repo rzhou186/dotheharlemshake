@@ -126,3 +126,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.app-window .media-sharer div {
+	float: left;
+}
