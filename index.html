@@ -46,6 +46,7 @@
 	    		<a class="brand" href=""><strong >Make the <span style="color:red">Harlem</span> Shake!</strong></a>
 	    		<ul class="nav pull-right">
 	    			<li><a href="#aboutModal", data-toggle="modal">About</a></li>
+	    			<li><a href="#disclaimerModal", data-toggle="modal">Disclaimer</a></li>
 	    		</ul>
 	    	</div>
   		</div>
@@ -96,13 +97,13 @@
 				<!-- Link Retriever (kept hidden until step 3) -->
 				<div id="linkretriever">
 					<input type="text" value="">
-					<button id="copy-button" class="btn btn-info">Copy URL</button>
+					<button id="copy-button" class="btn btn-info">Share URL</button>
 				</div>
 
 				<!-- Social Media Sharer -->
 				<div class="media-sharer">
 					<div id="facebook-button">
-						<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+						<div class="fb-like" data-href="http://www.maketheharlemshake.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
 					</div>
 					<div id="twitter-btn">
 						<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
@@ -137,6 +138,20 @@
 		    <p>We're a duo of Stanford undergraduates who love hacking and social coding. This was our most recent weekend project. Hope you enjoy it!</p>
 		    <strong>Disclaimer</strong>
 		    <p>Please note that we take no credit for the Harlem Shake dance.</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+		<!-- "Disclaimer" Modal -->
+		<div id="disclaimerModal" class="modal hide fade">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">x</button>
+		    <h3>About</h3>
+		  </div>
+		  <div class="modal-body">
+		  	<p>One fine body...</p>
 		  </div>
 		  <div class="modal-footer">
 		    <button class="btn" data-dismiss="modal">Close</button>
