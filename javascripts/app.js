@@ -53,7 +53,7 @@ function alertError(errorId, errorMsg) {
 		$("#webcam").remove();
 		$("#record-btn-txt").html("Webcam access denied.");
 	}
-	else{
+	else if (errorId !== 7){
 		alert(errorMsg);
 	}
 }
@@ -151,9 +151,8 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			$("#download-btn").click(function(e) {
-				e.preventDefault();
-    		window.location.href = data;
+			$("#download-btn").click(function() {
+    		document.location.href = data;
     	});
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 			$("#download-btn").attr("disabled", false);
