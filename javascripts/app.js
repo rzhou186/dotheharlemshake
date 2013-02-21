@@ -25,6 +25,8 @@ $(document).ready(function(){
 		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 
 		displayDownloader();
+		displayLinkRetriever();
+
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 		$("#download-btn").click(function() {
   		document.location.href = '/download.php?f=' + originalName;
@@ -170,6 +172,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		data: form_data,
 		success: function(data){
 			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,''));
+			displayLinkRetriever();
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
@@ -268,16 +271,23 @@ function displayDownloader(){
 	$(".progress-tracker").remove();
 	$("#vidplayer").css("display", "block");
 	$("#downloader").css("display", "block");
-	$("#linkretriever input").val(window.location);
-	
+
+	$("#step2").attr("class", "progress-step center");
+	$("#step3").attr("class", "progress-step right current");
+}
+
+/*
+ * Function: displayLinkRetriever()
+ * Builds and displays the link retriever, complete with a clipboard copy button
+ * 
+ */
+function displayLinkRetriever(){
+	$("#linkretriever input").val(window.location);	
 	var clip = new ZeroClipboard( document.getElementById("copy-button"), {
   	moviePath: "javascripts/ZeroClipboard-master/ZeroClipboard.swf"
 	});
 	$("#copy-button").attr('data-clipboard-text', $("#linkretriever input").val());
 	$("#linkretriever").css("display", "block");
-
-	$("#step2").attr("class", "progress-step center");
-	$("#step3").attr("class", "progress-step right current");
 }
 
 /* -------------------- JW Player Functions  -------------------- */
