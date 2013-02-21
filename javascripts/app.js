@@ -168,7 +168,6 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		data: form_data,
 		success: function(data){
 			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,''));
-			alert(data);
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
@@ -274,9 +273,9 @@ function displayDownloader(){
 /* -------------------- JW Player Functions  -------------------- */
 
 function initiateJWPlayer(vidname){
-	alert("Initiating JW Player...");
+	alert("Initiating JW Player... name of video is " + vidname);
   jwplayer('#vidplayer').setup({
-		file: 'videos/' + vidname,
+		file: 'http://www.maketheharlemshake.com/videos/' + vidname,
 		width: '396',
 		height: '296'
   });
