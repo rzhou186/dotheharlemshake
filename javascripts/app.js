@@ -22,6 +22,14 @@ $(document).ready(function(){
 */
 	
 	if (window.location.hash !== ""){
+		$("#recorder").remove();
+		$("#record-btn").remove();
+		$("#downloader").css("display", "block");
+
+		$("#step2").attr("class", "progress-step center");
+		$("#step3").attr("class", "progress-step right current");
+		
+		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 		$("#download-btn").click(function() {
   		document.location.href = '/download.php?f=' + window.location.hash.replace('#',''); + ".mpg";
   	});
