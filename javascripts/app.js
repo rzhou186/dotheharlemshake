@@ -25,7 +25,6 @@ $(document).ready(function(){
 		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 
 		displayDownloader();
-		// initiateJWPlayer(originalName);
 		$(".progress-tracker").css("visibility", "hidden");
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 
@@ -34,6 +33,8 @@ $(document).ready(function(){
   	});
 		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 		$("#download-btn").attr("disabled", false);
+
+		initiateJWPlayer(originalName);
 
 		return;
 	}
@@ -167,12 +168,13 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		data: form_data,
 		success: function(data){
 			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,''));
-			// initiateJWPlayer(data);
+			alert(data);
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 			$("#download-btn").attr("disabled", false);
+			initiateJWPlayer(data);
 		}
 	});
 
