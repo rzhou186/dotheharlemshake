@@ -28,10 +28,10 @@ $(document).ready(function(){
 
 		$("#step2").attr("class", "progress-step center");
 		$("#step3").attr("class", "progress-step right current");
-		
+
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
 		$("#download-btn").click(function() {
-  		document.location.href = '/download.php?f=' + window.location.hash.replace('#',''); + ".mpg";
+  		document.location.href = '/download.php?f=' + window.location.hash.replace('#','') + ".mpg";
   	});
 		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 		$("#download-btn").attr("disabled", false);
