@@ -235,7 +235,7 @@ function completeCountdown(seconds){
 	var recordInterval = setInterval(function(){
 
 		// If counter has hit 1, terminate setInterval
-		if (counter === 1) {
+		if (counter === 0) {
 			clearInterval(recordInterval);
 
 			// Stop recording
