@@ -38,6 +38,7 @@ $(document).ready(function(){
     cornerRadius: 0,
     useMicrophone: false,
     onError: alertError,
+    fileName: 'uservideo',
     connected: enableRecord,
     fileReady: fileReady
 
@@ -159,8 +160,8 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			history.pushState(null, null, "/#" + data.replace('.mpg', ''));
-			// add jwplayer
+			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace('_uservideo', ''));
+			// Add JWPlayer here!
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
