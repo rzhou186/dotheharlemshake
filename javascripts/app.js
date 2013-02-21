@@ -28,7 +28,7 @@ $(document).ready(function(){
 		$("#download-btn").attr("disabled", false);
 
 		return;
-		
+
 	}
 
 	// Initiate ScriptCam application
@@ -38,7 +38,6 @@ $(document).ready(function(){
     cornerRadius: 0,
     useMicrophone: false,
     onError: alertError,
-    fileName: 'uservideo',
     connected: enableRecord,
     fileReady: fileReady
 
