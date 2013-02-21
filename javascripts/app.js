@@ -15,11 +15,11 @@ var harlemshake_part1 = new Audio('audio/harlemshake-part1.mp3');
 var harlemshake_part2 = new Audio('audio/harlemshake-part2.mp3');
 
 $(document).ready(function(){
-
+/*
 	$("#recorder").remove();
 	$("#record-btn").remove();
 	$("#downloader").css("display", "block");
-
+*/
 	// Initiate ScriptCam application
   $("#webcam").scriptcam({
     width: 396,
