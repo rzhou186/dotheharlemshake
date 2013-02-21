@@ -24,9 +24,27 @@
 
 		</script>
 
+		<!-- Facebook API -->
+		<meta property="og:title" content="Make the Harlem Shake!" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://ec2-50-19-185-21.compute-1.amazonaws.com/dotheharlemshake/" />
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="Make the Harlem Shake!" />
+		<meta property="fb:admins" content="100003347615456" />
+
 	</head>
 
 	<body>
+
+		<!-- Facebook API -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 		<!-- Navbar (Top) -->
 		<div class="navbar navbar-fixed-top navbar-inverse">
@@ -81,8 +99,15 @@
 
 				<!-- Social Media Sharer -->
 				<div class="media-sharer">
-					<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
-					<div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></div>
+					<div id="twitter-btn">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+					</div>
+					<div id="googleplus-btn">
+						<div class="g-plusone" data-size="medium"></div>
+					</div>
+					<div id="facebook-button">
+						<div class="fb-like" data-href="http://www.maketheharlemshake.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="dark"></div>
+					</div>
 				</div>
   				
 			</div>
@@ -129,13 +154,6 @@
 
 	</body>
 
-	<!-- JS -->
-	<script src="javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
-	<script src="javascripts/swfobject/swfobject.js" type="text/javascript"></script>
-	<script src="javascripts/scriptcam/scriptcam.js" type="text/javascript"></script>
-	<script src="javascripts/app.js" type="text/javascript"></script>
-
 	<!-- Twitter API -->
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
@@ -147,5 +165,12 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 	  })();
 	</script>
+
+	<!-- JS -->
+	<script src="javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
+	<script src="javascripts/swfobject/swfobject.js" type="text/javascript"></script>
+	<script src="javascripts/scriptcam/scriptcam.js" type="text/javascript"></script>
+	<script src="javascripts/app.js" type="text/javascript"></script>
 
 </html>
