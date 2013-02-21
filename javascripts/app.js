@@ -124,7 +124,7 @@ function fileReady (fileName){
 
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
-		},5000);
+		},10000);
 
 	}
 
@@ -323,7 +323,7 @@ function updateStep(step){
 		}
 		*/
 	}
-	
+
 	else alert("Error! Invalid step number.");
 
 }
