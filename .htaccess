@@ -1,0 +1,4 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^maketheharlemshake\.com
+RewriteRule (.*) http://www.maketheharlemshake.com/$1 [R=301,L]
