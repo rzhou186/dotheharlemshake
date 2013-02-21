@@ -103,11 +103,10 @@ body {
 }
 
 .app-window #downloader {
-	/*display: none;*/
+	display: none;
 	height: 205px;
 	width: 400px;
 	margin-top: 20px;
-	background-color: green;
 	margin-bottom: 0px;
 	margin-left: auto;
 	margin-right: auto;
