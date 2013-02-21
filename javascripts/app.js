@@ -28,7 +28,7 @@ $(document).ready(function(){
 		$("#download-btn").attr("disabled", false);
 
 		return;
-		
+
 	}
 
 	// Initiate ScriptCam application
@@ -161,7 +161,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		data: form_data,
 		success: function(data){
 			history.pushState(null, null, "/#" + data.replace('.mpg', ''));
-			// add jwplayer
+			// Add JWPlayer
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
     	});
@@ -232,8 +232,8 @@ function completeCountdown(seconds){
 			$.scriptcam.closeCamera();
 
 			// Update current step
-			if (currStep < 3) {
-				currStep++;
+			currStep++;
+			if (currStep === 1) {
 				updateStep(currStep);
 			}	
 		}
