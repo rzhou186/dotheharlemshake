@@ -34,7 +34,7 @@ $(document).ready(function(){
 		$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 		$("#download-btn").attr("disabled", false);
 
-		initiateJWPlayer(originalName);
+		initVideoJS(originalName);
 
 		return;
 	}
@@ -178,7 +178,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
     	});
 			$("#download-btn-txt").html("<i class='icon-hand-right icon-white'></i>&nbsp;&nbsp;Download Video&nbsp;&nbsp;<i class='icon-hand-left icon-white'></i>");
 			$("#download-btn").attr("disabled", false);
-			initiateJWPlayer(data);
+			initVideoJS(data);
 		}
 	});
 
@@ -293,7 +293,9 @@ function displayLinkRetriever(){
 
 /* -------------------- Video.js Functions  -------------------- */
 
-
+function initVideoJS(filename){
+	$("#vidplayer video").html(filename);
+}
 
 /* -------------------- Miscellaneous Functions  -------------------- */
 
