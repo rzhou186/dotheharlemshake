@@ -24,8 +24,6 @@ $(document).ready(function(){
 		originalName = [originalName.slice(0, 7), "_uservideo", originalName.slice(7)].join('');
 		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 
-		alert(originalName);
-
 		displayDownloader();
 		displayLinkRetriever();
 
@@ -173,7 +171,7 @@ function buildHSVideo(recordingOne, recordingTwo, audioFile){
 		type: "POST",
 		data: form_data,
 		success: function(data){
-			history.pushState(null, null, "/#" + data.replace('.mpg', '').replace(/_uservideo/g,''));
+			history.pushState(null, null, "/#" + data.replace('.mp4', '').replace(/_uservideo/g,''));
 			displayLinkRetriever();
 			$("#download-btn").click(function() {
     		document.location.href = '/download.php?f=' + data;
