@@ -21,6 +21,7 @@ $(document).ready(function(){
 
 		// Rebuild the original filename
 		var originalName = window.location.hash.replace('#','');
+		alert(originalName);l
 		originalName = [originalName.slice(0, 7), "_uservideo", originalName.slice(7)].join('');
 		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 
