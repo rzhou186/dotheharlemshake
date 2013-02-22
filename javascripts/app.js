@@ -271,6 +271,7 @@ function displayDownloader(){
 	$(".progress-tracker").remove();
 	$("#vidplayer").css("display", "block");
 	$("#downloader").css("display", "block");
+	$("#linkretriever").css("display", "block");
 
 	$("#step2").attr("class", "progress-step center");
 	$("#step3").attr("class", "progress-step right current");
@@ -287,7 +288,7 @@ function displayLinkRetriever(){
   	moviePath: "javascripts/ZeroClipboard-master/ZeroClipboard.swf"
 	});
 	$("#copy-button").attr('data-clipboard-text', $("#linkretriever input").val());
-	$("#linkretriever").css("display", "block");
+	$("#linkretriever").css("visibility", "visible");
 }
 
 /* -------------------- JW Player Functions  -------------------- */

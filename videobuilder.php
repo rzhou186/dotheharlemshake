@@ -18,7 +18,7 @@
     unlink('/home/scriptcam/'.$file1.$file2.'.mpg');
     shell_exec($ffmpeg.' -i '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg -qscale:v 1 -strict experimental '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'.mp4');
     unlink('/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg');
-    echo $file1.$file2.'1.mpg';
+    echo $file1.$file2.'.mpg';
   }
 
 ?>
