@@ -27,7 +27,8 @@ $(document).ready(function(){
 		displayDownloader();
 		displayLinkRetriever();
 
-		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Video finished! <span style='color: #ff0000;'>Download</span> it below, then upload it or share it!");
+		$(".helper-text").html("<a href='http://www.maketheharlemshake.com'>www.maketheharlemshake.com</a>");
+		$("#linkretriever").css("height", "60px");
 		$("#download-btn").click(function() {
   		document.location.href = '/download.php?f=' + originalName;
   	});
