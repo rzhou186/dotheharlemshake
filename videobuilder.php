@@ -2,7 +2,6 @@
 
   $is_ajax = $_REQUEST['is_ajax'];
 
-/*
   if ($is_ajax == 1){
     $file1 = $_REQUEST['recordingOne'];
     $file2 = $_REQUEST['recordingTwo'];
@@ -17,10 +16,9 @@
     unlink('/home/scriptcam/'.$file2.'.mpg');
     shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.$file2.'.mpg'.' -i '.$audio.' -ab 192k -vcodec copy -shortest '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg');
     unlink('/home/scriptcam/'.$file1.$file2.'.mpg');
-    shell_exec($ffmpeg.' -i '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg -qscale:v 1 -strict experimental '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'.mp4');
+    shell_exec($ffmpeg.' -i '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg -vcodec libx264 -qscale:v 1 -strict experimental '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'.mp4');
     unlink('/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg');
     echo $file1.$file2.'.mpg';
   }
-*/
 
 ?>
