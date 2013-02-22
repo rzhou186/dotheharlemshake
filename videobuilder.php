@@ -3,10 +3,14 @@
   $is_ajax = $_REQUEST['is_ajax'];
 
   if ($is_ajax == 1){
+
     $file1 = $_REQUEST['recordingOne'];
     $file2 = $_REQUEST['recordingTwo'];
     $audio = $_REQUEST['audioFile'];
     $ffmpeg = 'ffmpeg';
+
+    
+    
     shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file1.'.mpg');
     unlink('/home/scriptcam/'.$file1.'.mp4');
     shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file2.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file2.'.mpg');
