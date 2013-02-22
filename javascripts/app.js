@@ -294,11 +294,11 @@ function displayLinkRetriever(){
 /* -------------------- Video.js Functions  -------------------- */
 
 function initVideoJS(filename){
-	alert("http://www.maketheharlemshake.com/videos/" + filename);
-	$("#vidplayer").html(
-		"<video class='video-js vjs-default-skin' controls preload='auto' width='396' height='296'><script src='http://www.maketheharlemshake.com/videos/" + filename + "' type='video/mp4'></script></video>"
-	);
-	
+	$("#videojs").html("<source src='http://www.maketheharlemshake.com/videos/" + filename + "' type='video/mp4' />");
+
+	_V_("videojs", {}, function(){
+  	// Player (this) is initialized and ready.
+	});
 }
 
 /* -------------------- Miscellaneous Functions  -------------------- */
