@@ -294,7 +294,7 @@ function displayLinkRetriever(){
 /* -------------------- Video.js Functions  -------------------- */
 
 function initVideoJS(filename){
-	$("#vidplayer video").html(filename);
+	$("#vidplayer video").html("http://www.maketheharlemshake.com/videos/" + filename);
 }
 
 /* -------------------- Miscellaneous Functions  -------------------- */
