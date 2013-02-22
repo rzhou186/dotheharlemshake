@@ -141,7 +141,7 @@ function fileReady (fileName){
 		// Give ScriptCam time to load final recording to FTP server
 		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
-		},20000);
+		},25000);
 
 	}
 
