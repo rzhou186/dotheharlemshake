@@ -294,7 +294,7 @@ function displayLinkRetriever(){
 /* -------------------- Video.js Functions  -------------------- */
 
 function initVideoJS(filename){
-	alert(filename);
+	// alert(filename);
 	/*
 	$("#vidplayer").html(
 		"<video class='video-js vjs-default-skin' controls preload='auto' width='396' height='296'>" + 
