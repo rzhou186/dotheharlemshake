@@ -21,9 +21,9 @@
 		  })();
 		</script>
 
-		<!-- JW Player -->
-		<script type="text/javascript" src="jwplayer/jwplayer.js" ></script>
-		<script type="text/javascript">jwplayer.key="fIc9uZpFQGPpTLt+WlnVpvThZaFqA7CTFNNI2w==";</script>
+		<!-- Video.js -->
+		<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+		<script src="http://vjs.zencdn.net/c/video.js"></script>
 
 	</head>
 
@@ -76,6 +76,9 @@
 			
 				<!-- Video Player (kept hidden until step 3) -->
 				<div id="vidplayer">
+					<video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="396" height="296">
+  					<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
+					</video>
 				</div>
 
 				<!-- Downloader (kept hidden until step 3) -->

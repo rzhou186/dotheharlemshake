@@ -291,15 +291,9 @@ function displayLinkRetriever(){
 	$("#linkretriever").css("visibility", "visible");
 }
 
-/* -------------------- JW Player Functions  -------------------- */
+/* -------------------- Video.js Functions  -------------------- */
 
-function initiateJWPlayer(vidname){
-  jwplayer('#vidplayer').setup({
-		file: 'http://www.maketheharlemshake.com/videos/' + vidname,
-		width: '396',
-		height: '296'
-  });
- }
+
 
 /* -------------------- Miscellaneous Functions  -------------------- */
 
