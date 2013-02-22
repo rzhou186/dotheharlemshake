@@ -295,11 +295,13 @@ function displayLinkRetriever(){
 
 function initVideoJS(filename){
 	alert(filename);
+	
 	$("#vidplayer").html(
 		"<video class='video-js vjs-default-skin' controls preload='auto' width='396' height='296'>" + 
-			"http://www.maketheharlemshake.com/videos/" + filename +
+			"<script src='http://www.maketheharlemshake.com/videos/" + filename + "'></script>" +
 		"</video>"
 	);
+	
 }
 
 /* -------------------- Miscellaneous Functions  -------------------- */
