@@ -141,7 +141,7 @@ body {
 }
 
 .app-window #linkretriever input {
-	width: 275px;
+	width: 285px;
 	height: 25px;
 	padding-left: 10px;
 	-webkit-border-radius: 0px;
@@ -151,7 +151,7 @@ body {
 
 .app-window #linkretriever .btn {
 	height: 35px;
-	width: 100px;
+	width: 90px;
 	padding-top: 2px;
 	padding-left: 10px;
 	margin-left: 3px;
