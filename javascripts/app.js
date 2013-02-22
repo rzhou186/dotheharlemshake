@@ -24,6 +24,8 @@ $(document).ready(function(){
 		originalName = [originalName.slice(0, 7), "_uservideo", originalName.slice(7)].join('');
 		originalName = [originalName.slice(0, 24), "_uservideo", originalName.slice(24)].join('');
 
+		alert(originalName);
+
 		displayDownloader();
 		displayLinkRetriever();
 
