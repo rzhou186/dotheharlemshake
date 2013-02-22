@@ -294,12 +294,9 @@ function displayLinkRetriever(){
 /* -------------------- Video.js Functions  -------------------- */
 
 function initVideoJS(filename){
-	
-	
+	alert("http://www.maketheharlemshake.com/videos/" + filename);
 	$("#vidplayer").html(
-		"<video class='video-js vjs-default-skin' controls preload='auto' width='396' height='296'>" + 
-			"<script src='http://www.maketheharlemshake.com/videos/" + filename + "' type='video/mp4'></script>" +
-		"</video>"
+		"<video class='video-js vjs-default-skin' controls preload='auto' width='396' height='296'><script src='http://www.maketheharlemshake.com/videos/" + filename + "' type='video/mp4'></script></video>"
 	);
 	
 }
