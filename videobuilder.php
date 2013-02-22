@@ -13,7 +13,7 @@
 
     while ($counter > 0){
 
-      if (file_exists('/home/scriptcam/'.$file1) && file_exists('/home/scriptcam/'.$file2)){
+      if (file_exists('/home/scriptcam/'.$file1.'.mp4') && file_exists('/home/scriptcam/'.$file2.'.mp4')){
 
         shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.'.mp4 -qscale:v 1 '.'/home/scriptcam/'.$file1.'.mpg');
         unlink('/home/scriptcam/'.$file1.'.mp4');
