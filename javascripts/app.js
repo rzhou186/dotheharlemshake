@@ -139,9 +139,9 @@ function fileReady (fileName){
 		$(".helper-text").html("<span style='color: #ffffff;'>Step 3: </span>Finished! <span style='color: #ff0000;'>Share</span> your link on Facebook or Twitter, or download it below!");
 
 		// Give ScriptCam time to load final recording to FTP server
-		// setTimeout(function(){
+		setTimeout(function(){
 			buildHSVideo(filenameOne, filenameTwo, 'audio/harlemshake-complete.mp3');
-		// },25000);
+		},20000);
 
 	}
 
