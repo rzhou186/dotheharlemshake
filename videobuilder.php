@@ -2,6 +2,7 @@
 
   $is_ajax = $_REQUEST['is_ajax'];
 
+/*
   if ($is_ajax == 1){
     $file1 = $_REQUEST['recordingOne'];
     $file2 = $_REQUEST['recordingTwo'];
@@ -20,5 +21,6 @@
     unlink('/var/www/dotheharlemshake/videos/'.$file1.$file2.'1.mpg');
     echo $file1.$file2.'.mpg';
   }
+*/
 
 ?>
