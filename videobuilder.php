@@ -9,7 +9,7 @@
     $audio = $_REQUEST['audioFile'];
     $ffmpeg = 'ffmpeg';
 
-    $counter = 10;
+    $counter = 20;
 
     while ($counter > 0){
 
@@ -27,6 +27,8 @@
         shell_exec($ffmpeg.' -i '.'/home/scriptcam/'.$file1.$file2.'1.mpg -vcodec libx264 -qscale:v 1 -strict experimental '.'/var/www/dotheharlemshake/videos/'.$file1.$file2.'.mp4');
         unlink('/home/scriptcam/'.$file1.$file2.'1.mpg');
         echo $file1.$file2.'.mp4';
+
+        return;
 
       }
 
