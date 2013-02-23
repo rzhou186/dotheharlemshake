@@ -9,7 +9,7 @@
     $audio = $_REQUEST['audioFile'];
     $ffmpeg = 'ffmpeg';
 
-    $counter = 20;
+    $counter = 5;
 
     while ($counter > 0){
 
