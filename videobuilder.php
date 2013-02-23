@@ -9,6 +9,8 @@
     $audio = $_REQUEST['audioFile'];
     $ffmpeg = 'ffmpeg';
 
+    $counter = 20;
+
     while ($counter > 0){
 
       if (file_exists('/home/scriptcam/'.$file1.'.mp4') && file_exists('/home/scriptcam/'.$file2.'.mp4')){
